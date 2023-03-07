@@ -8,7 +8,7 @@ import seaborn as sns
 import random
 sns.set_style('white')
 
-
+st.title('Application to Calculate Positive and Negative Predictive Values screening Tests from Sensitivity, Specificity and Prevalance')
 sen_values = st.slider(
     'Select a range of Sensitivity',
     0.0, 100.0, (25.0, 75.0))
