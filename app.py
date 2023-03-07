@@ -9,10 +9,20 @@ import random
 sns.set_style('white')
 
 
-values = st.slider(
-    'Select a range of values',
+sen_values = st.slider(
+    'Select a range of Sensitivity',
     0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+st.write('Sensitivity Values:', sen_values)
+
+sp_values = st.slider(
+    'Select a range of Specificity',
+    0.0, 100.0, (25.0, 75.0))
+st.write('Specificity Values:', sp_values)
+
+pre_values = st.slider(
+    'Select a range of Prevalance',
+    0.0, 100.0, (25.0, 75.0))
+st.write('Prevalance Values:', pre_values)
 
 
 #num_simulations = 10
