@@ -33,19 +33,19 @@ all_stats = []
 for i in range(num_simulations):
     sen = []
     for i in range (0,100):
-        n=random.randint(sen_values)/100
+        n=random.randint(sen_values[0],sen_values[1])/100
         sen.append(n)
         sen = np.array(sen).round(2)
     
     sp = []
     for i in range (0,100):
-        n=random.randint(sp_values)/100
+        n=random.randint(sp_values[0],sp_values[1])/100
         sp.append(n)
     sp = np.array(sp).round(2)
     
     prv = []
     for i in range (0,100):
-        n=random.randint(pre_values)/100
+        n=random.randint(pre_values[0],pre_values[1])/100
         prv.append(n)
     prv = np.array(prv).round(2)
     
