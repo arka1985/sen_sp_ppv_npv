@@ -1,9 +1,6 @@
+import altair as alt
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-import random
-sns.set_style('white')
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
