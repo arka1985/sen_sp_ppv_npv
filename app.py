@@ -25,7 +25,7 @@ pre_values = st.slider(
 st.write('Prevalance Values:', pre_values)
 
 
-num_simulations = 10
+num_simulations = 50
 
 all_stats = []
 
