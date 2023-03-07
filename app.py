@@ -35,7 +35,7 @@ for i in range(num_simulations):
     for i in range (0,100):
         n=random.randint(sen_values[0],sen_values[1])/100
         sen.append(n)
-        sen = np.array(sen).round(2)
+    sen = np.array(sen).round(2)
     
     sp = []
     for i in range (0,100):
