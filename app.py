@@ -7,7 +7,14 @@ import numpy as np
 import seaborn as sns
 import random
 sns.set_style('white')
-num_simulations = 40
+
+
+values = st.slider(
+    'Select a range of values',
+    0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
+
+num_simulations = 10
 
 all_stats = []
 
