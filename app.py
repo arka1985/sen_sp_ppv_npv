@@ -8,7 +8,8 @@ import seaborn as sns
 import random
 sns.set_style('white')
 
-st.title('Application to Calculate Positive and Negative Predictive Value of screening Tests from Sensitivity, Specificity and Prevalance')
+st.title('Calculation Positive and Negative Predictive Value of screening Tests from Sensitivity, Specificity and Prevalance')
+st.subheader('Monte Carlo Simulation Approach')
 sen_values = st.slider(
     'Select a range of Sensitivity',
     0.0, 100.0, (25.0, 75.0))
@@ -63,6 +64,8 @@ positive = Positive_Pred.transpose()
 negative = Negative_Pred.transpose()
 x= pd.DataFrame(positive.mean())
 y= pd.DataFrame(negative.mean())
+st.text(x.mean()*100)
+st.text(y.mean()*100)
 fig, ax = plt.subplots(1,2,figsize=(10, 4))
 sns.kdeplot(x.squeeze(),ax=ax[0],color='green').set(xlabel='Positive Predictive Value')
 sns.kdeplot(y.squeeze(),ax=ax[1],color='crimson').set(xlabel='Negative Predictive Value')    
