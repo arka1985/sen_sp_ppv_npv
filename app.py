@@ -8,10 +8,10 @@ import seaborn as sns
 import random
 sns.set_style('white')
 
-st.title('Calculation of Positive and Negative Predictive Value of Screening Tests from Sensitivity, Specificity and Disease Prevalance')
+st.title('Calculation of Positive and Negative Predictive Value of Screening Tests from Sensitivity, Specificity and Disease Prevalence')
 st.subheader(':red[Monte Carlo Simulation Approach]')
 st.subheader(':blue[@Designed and Developed by Dr. Arkaprabha Sau,MBBS, MD (Gold Medalist), PhD (Research Scholar-Artificial Intelligence & Machine Learning)]')
-st.header('Please specify the range of Sensitivity, Specificity of the Test and Prevalance of the Disease')
+st.header('Please specify the range of Sensitivity, Specificity of the Test and Prevalence of the Disease')
 st.success('Sensitivity')
 sen_values = st.slider(
     'Select a range of Sensitivity',
@@ -22,11 +22,11 @@ sp_values = st.slider(
     'Select a range of Specificity',
     0.0, 100.0, (25.0, 75.0))
 st.write('Specificity Values:', sp_values)
-st.error("Prevalance")
+st.error("Prevalence")
 pre_values = st.slider(
-    'Select a range of Prevalance',
+    'Select a range of Prevalence',
     0.0, 100.0, (25.0, 75.0))
-st.write('Prevalance Values:', pre_values)
+st.write('Prevalence Values:', pre_values)
 
 
 num_simulations = 50
