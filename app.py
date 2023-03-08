@@ -29,7 +29,7 @@ pre_values = st.slider(
 st.write('Prevalance Values:', pre_values)
 
 
-num_simulations = 100
+num_simulations = 50
 
 all_stats_ppv = []
 all_stats_npv = []
@@ -74,8 +74,9 @@ st.write("Standard Deviation",x.std()*100)
 st.subheader('Mean and Standard Deviation of the Negative Predictive Value')
 st.write('Mean',y.mean()*100)
 st.write("Standard Deviation",y.std()*100)
+
 st.subheader('Distribution of the Positive and Negative Predictive Value')
-fig, ax = plt.subplots(1,2,figsize=(10, 4))
+fig, ax = plt.subplots(1,2,figsize=(12, 6))
 sns.kdeplot(x.squeeze(),ax=ax[0],color='green',fill=True).set(xlabel='Positive Predictive Value')
 sns.kdeplot(y.squeeze(),ax=ax[1],color='crimson',fill=True).set(xlabel='Negative Predictive Value')    
 st.pyplot(fig)
