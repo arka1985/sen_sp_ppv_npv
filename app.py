@@ -25,9 +25,10 @@ pre_values = st.slider(
 st.write('Prevalance Values:', pre_values)
 
 
-num_simulations = 50
+num_simulations = 100
 
-all_stats = []
+all_stats_ppv = []
+all_stats_npv = []
 
 #Loop through many simulations
 for i in range(num_simulations):
@@ -51,22 +52,18 @@ for i in range(num_simulations):
     
     
     df = pd.DataFrame(index=range(0,100), data={'sen': sen,'sp': sp,'prv':prv})
-
-    
     df['PPV'] = (df['sen']*df['prv'])/((df['sen']*df['prv']) + ((1-df['sp'])*(1-df['prv'])))
+    df['NPV'] = (df['sp']*(1-df['prv']))/(((1-df['sen'])*df['prv']) + ((df['sp'])*(1-df['prv'])))
+    all_stats_ppv.append(df['PPV'])
+    all_stats_npv.append(df['NPV'])
     
-    all_stats.append([df['sen'],df['sp'],df['prv'],df['PPV']])
-    all_stats.append([df['sen'].mean(),df['sp'].mean(),df['prv'].mean(),df['PPV'].mean()])
-    all_stats.append(df['PPV'])
-
-Positive_Pred = pd.DataFrame(all_stats)
+Positive_Pred = pd.DataFrame(all_stats_ppv)
+Negative_Pred = pd.DataFrame(all_stats_npv)
 positive = Positive_Pred.transpose()
+negative = Negative_Pred.transpose()
 x= pd.DataFrame(positive.mean())
-#x.describe()
-st.text(x.mean()*100)
-fig, ax = plt.subplots(figsize=(12, 10))
-x.plot(kind='kde',ax=ax)
-#ax.text(0.45,15,'Positive Predictive Value:', fontsize = 12,color='blue',fontweight='bold')
-#ax.text(0.45,14,'Mean & SD: 41% & 2% ', fontsize = 12,color='red',fontweight='bold')
-ax.get_legend().remove()
+y= pd.DataFrame(negative.mean())
+fig, ax = plt.subplots(1,2,figsize=(10, 4))
+sns.kdeplot(x.squeeze(),ax=ax[0],color='green').set(xlabel='Positive Predictive Value')
+sns.kdeplot(y.squeeze(),ax=ax[1],color='crimson').set(xlabel='Negative Predictive Value')    
 st.pyplot(fig)
