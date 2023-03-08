@@ -10,8 +10,8 @@ sns.set_style('white')
 
 st.title('Calculation of Positive and Negative Predictive Value of Screening Tests from Sensitivity, Specificity and Disease Prevalance')
 st.subheader(':red[Monte Carlo Simulation Approach]')
-st.subheader(':blue[Designed and Developed by Dr. Arkaprabha Sau,MBBS, MD (Gold Medalist), PhD (Research Scholar-Artificial Intelligence & Machine Learning]')
-st.header('Please input the range of Sensitivity, Specificity of the Test and Prevalance of the Disease')
+st.subheader(':blue[@Designed and Developed by Dr. Arkaprabha Sau,MBBS, MD (Gold Medalist), PhD (Research Scholar-Artificial Intelligence & Machine Learning]')
+st.header('Please specify the range of Sensitivity, Specificity of the Test and Prevalance of the Disease')
 st.success('Sensitivity')
 sen_values = st.slider(
     'Select a range of Sensitivity',
@@ -67,11 +67,12 @@ positive = Positive_Pred.transpose()
 negative = Negative_Pred.transpose()
 x= pd.DataFrame(positive.mean())
 y= pd.DataFrame(negative.mean())
-st.info("Result Section")
-st.subheader('Mean and Standard Deviation of the Positive Predictive Value')
+
+st.info("Result based on Simulation")
+st.subheader('Mean and Standard Deviation of the Positive Predictive Value (%)')
 st.write('Mean',x.mean()*100)
 st.write("Standard Deviation",x.std()*100)
-st.subheader('Mean and Standard Deviation of the Negative Predictive Value')
+st.subheader('Mean and Standard Deviation of the Negative Predictive Value (%)')
 st.write('Mean',y.mean()*100)
 st.write("Standard Deviation",y.std()*100)
 
