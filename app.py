@@ -10,7 +10,7 @@ sns.set_style('white')
 
 st.title('Calculation of Positive and Negative Predictive Value of Screening Tests from Sensitivity, Specificity and Disease Prevalance')
 st.subheader(':red[Monte Carlo Simulation Approach]')
-st.subheader(':blue[@Designed and Developed by Dr. Arkaprabha Sau,MBBS, MD (Gold Medalist), PhD (Research Scholar-Artificial Intelligence & Machine Learning]')
+st.subheader(':blue[@Designed and Developed by Dr. Arkaprabha Sau,MBBS, MD (Gold Medalist), PhD (Research Scholar-Artificial Intelligence & Machine Learning])')
 st.header('Please specify the range of Sensitivity, Specificity of the Test and Prevalance of the Disease')
 st.success('Sensitivity')
 sen_values = st.slider(
